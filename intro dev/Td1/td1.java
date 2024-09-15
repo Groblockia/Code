@@ -71,7 +71,8 @@ public class td1{
         int count = 0;
         for (int i = 0; i<nbr; i++){
             Ut.afficher("entrez l'age de la personne n°");
-            Ut.afficherSL(i+1);
+            Ut.afficher(i+1);
+            Ut.afficher(":");
             int age = Ut.saisirEntier();
             somme += age;
             count += 1;
