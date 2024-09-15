@@ -1,10 +1,10 @@
 package Td2;
 
 public class td2{
-     void main(){
+    public static void main(String[] args){
         exo7_1();
     }
-    void exo7_1(){
+    static void exo7_1(){
         double a= 9;
         double b=13;
         double c= 2;
