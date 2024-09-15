@@ -3,7 +3,7 @@ package Td1;
 public class td1{
     public static void main(String[] args){
         Ut.afficherSL("feur");
-        exo6();
+        exo7_2();
     }
 
     static void template(){
@@ -80,5 +80,44 @@ public class td1{
         Ut.afficher("la moyennes des âges est de: ");
         Ut.afficherSL(somme/count);
     }
+
+    static void exo7_1(){
+        Ut.afficher("entrez un entier >= 0: ");
+        int n = Ut.saisirEntier();
+        if (n <= 0) {
+            System.out.println("L'entier doit être strictement positif.");
+            return;
+        }
+        int U = 1;
+        for (int i = 2; i<=n; i++){
+            U = U + i;
+        }
+        Ut.afficher("U");
+        Ut.afficher(n);
+        Ut.afficher("=");
+        Ut.afficher(U);
+    }
+
+    static void exo7_2(){
+        Ut.afficher("entrez un entier >= 0: ");
+        int n = Ut.saisirEntier();
+        if (n <= 0) {
+            System.out.println("L'entier doit être strictement positif.");
+            return;
+        }
+        if (n == 1 || n == 2) {
+            System.out.println("Le terme U" + n + " de la suite de Fibonacci est : 1");
+        }
+        int U1 = 1, U2 = 1;
+        int Un = 0;
+
+        for (int i = 3; i<=n; i++){
+            Un = U1 + U2;
+            U1 = U2;
+            U2 = Un;
+        }
+        System.out.println("U"+n+"="+Un);
+    }
+
 
 }
