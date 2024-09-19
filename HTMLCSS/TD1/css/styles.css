@@ -1,5 +1,40 @@
 h3 {
-    font-style:italic;
-    color:blue;
+  font-style:italic;
+  color:blue;
   }
-  
+body {
+  background-color:#838892;
+  width: 600px;
+}
+
+h2 {
+  text-align: center;
+  font-family: "Aguante-Regular";
+}
+
+p {
+  line-height: 150%;
+  text-indent: 5px;
+}
+
+@font-face {
+  font-family: "Aguante-Regular";
+  src: url("fonts/Aguante-Regular.otf") ;
+}
+
+#beware {
+  height: 300px;
+}
+
+.pair {
+  background-color: #5BBDBF;
+}
+
+.impair{
+  background-color: #FF5850;
+}
+
+.skill{
+  color: red;
+  font-style: italic  ;
+}
