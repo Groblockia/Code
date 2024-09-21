@@ -43,7 +43,9 @@ public class Exercice_3 {
     }
 
     static void testPyramideElaboree() {
-        pyramideElaboree(9);
+        System.out.print("Saissez un entier:");
+        int x = Ut.saisirEntier();
+        pyramideElaboree(x);
     }
 
 }
