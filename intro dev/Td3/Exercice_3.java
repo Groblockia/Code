@@ -43,14 +43,10 @@ public class Exercice_3 {
     }
 
     static void testPyramideElaboree() {
-<<<<<<< HEAD
-        System.out.print("Saisissez un entier:");
-        pyramideElaboree(Ut.saisirEntier());
-=======
+
         System.out.print("Saissez un entier:");
         int x = Ut.saisirEntier();
         pyramideElaboree(x);
->>>>>>> 670b3337055a9881dc428140f68ebb13fff65263
     }
 
 }
