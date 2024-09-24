@@ -1,0 +1,65 @@
+h3 {
+  font-style:italic;
+  color:blue;
+  border: 1px solid #CCCCCC;
+  }
+body {
+  background-color:#838892;
+  width: 600px;
+  text-align: center
+}
+
+h2 {
+  text-align: center;
+  font-family: "Aguante-Regular";
+  padding: 10px 0px;
+}
+
+p {
+  line-height: 150%;
+  text-indent: 5px;
+  margin: 30px 0px;
+}
+
+@font-face {
+  font-family: "Aguante-Regular";
+  src: url("fonts/Aguante-Regular.otf") ;
+}
+
+#beware {
+  height: 300px;
+}
+
+.pair {
+  background-color: #5BBDBF;
+}
+
+.impair{
+  background-color: #FF5850;
+}
+
+.skill{
+  color: red;
+  font-style: italic  ;
+}
+
+thead{
+  background-color:  #00AAFF;
+}
+
+table .skill{
+  color: #640051;
+  padding: 0px 5px;
+}
+
+tbody>tr:nth-child(odd){background-color: white;}
+tbody>tr:nth-child(even){background-color: #ccc;}
+
+main img:nth-child(1){
+  float: left;
+}
+main img:nth-child(2){
+  float: right;
+}
+
+
