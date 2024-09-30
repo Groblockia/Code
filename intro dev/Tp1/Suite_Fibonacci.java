@@ -2,8 +2,9 @@ package Tp1;
 
 public class Suite_Fibonacci {
     public static void main(String[] args){
-        suiteOrOrdre(10);
+        suiteOrEpsilon(0.8);
     }
+    //Nombre d'or
 
     static int U(int i){
         if (i<=2) {
@@ -37,9 +38,6 @@ public class Suite_Fibonacci {
             System.out.print("//i = ");
             System.out.println(i);
 
-            System.out.print("Ui = ");
-            System.out.println(U(i));
-
             System.out.print("Vi = ");
             System.out.println(V(i));
 
@@ -49,5 +47,22 @@ public class Suite_Fibonacci {
 
     }
 
+    static void suiteOrEpsilon(double e){
+        double Nbor = (1+Math.sqrt(5))/2;
+
+        int i = 2;
+        while (e > Math.abs(V(i)-Nbor) ){
+
+            System.out.print("//i = ");
+            System.out.println(i);
+
+            System.out.print("Vi = ");
+            System.out.println(V(i));
+
+            System.out.println("P(Vi) = " + ((V(i)*V(i))-V(i)-1));
+            System.out.println(" ");
+        }
+
+    }
 
 }
