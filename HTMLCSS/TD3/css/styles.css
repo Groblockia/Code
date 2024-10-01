@@ -6,7 +6,7 @@ h3 {
 body {
   background-color:#838892;
   width: 600px;
-  text-align: center
+  text-align: left
 }
 
 h2 {
@@ -28,6 +28,14 @@ p {
 
 #beware {
   height: 300px;
+  float: right;
+  padding-left: 5px
+}
+
+#jeune {
+  height: 150px;
+  float: left;
+  padding-right: 5px;
 }
 
 .pair {
@@ -55,11 +63,18 @@ table .skill{
 tbody>tr:nth-child(odd){background-color: white;}
 tbody>tr:nth-child(even){background-color: #ccc;}
 
-main img:nth-child(1){
-  float: left;
-}
-main img:nth-child(2){
-  float: right;
+#clearleft {
+  clear: left;
 }
 
+#facebook{
+  position: fixed;
+  bottom: 50px;
+  right: 30px;
+}
 
+#twitter{
+  position: fixed;
+  bottom: 10px;
+  right: 30px;
+}
