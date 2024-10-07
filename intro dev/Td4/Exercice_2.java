@@ -2,14 +2,14 @@ package Td4;
 
 public class Exercice_2 {
     public static void main(String[] args){
-        saisirTabEntiers(10);
+        traiterTabEntiers();
     }
 
     static void afficherTabEntiers(int[] t){
         // affiche tout les éléments du tableau t
         for (int i = 0; i < t.length; i++) {
-            System.out.print("valeur n°"+i+"= a"+t[i]);
-            System.out.println(t[i]);
+            System.out.println("valeur n° "+(i+1)+"= "+t[i]);
+            //System.out.println(t[i]);
         }
         return;
     }
@@ -18,7 +18,7 @@ public class Exercice_2 {
         int[] x = new int[taille];
 
         for (int i = 0; i < x.length; i++) {
-            System.out.print("Saisissez l'entier n°"+i+":");
+            System.out.print("Saisissez l'entier n°"+(i+1)+":");
             x[i] = Ut.saisirEntier();
         }
         return x;
@@ -35,12 +35,22 @@ public class Exercice_2 {
     }
 
     static void traiterTabEntiers(){
+        System.out.println("\\\\\\ SaisirTabEntiers ///");
         int[] tab = saisirTabEntiers(10);
+
+        System.out.println(" ");
+        System.out.println("\\\\\\ afficherTabEntiers ///");
         afficherTabEntiers(tab);
+
+        System.out.println(" ");
+        System.out.println("\\\\\\ moyenne ///");
         System.out.println(moyenne(tab));
+
+        System.out.println(" ");
+        System.out.println("\\\\\\ afficherTabEntiers+1 ///");
         for (int i = 0; i < tab.length; i++) {
             if (tab[i]%2 == 0){
-                tab[i]+=1;
+                tab[i] = tab[i]+1;
             }
         }
         afficherTabEntiers(tab);
