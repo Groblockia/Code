@@ -6,7 +6,7 @@ public class Exercice_3 {
         afficherTabEntiers(frequenceChiffres(1223345));
         System.out.println(" ");
         System.out.println("\\\\\\ aChiffresTousDifferents ///");
-        System.out.println(aChiffresTousDifferents(frequenceChiffres(1223345)));
+        System.out.println(aChiffresTousDifferents(1223345));
     }
 
     static void afficherTabEntiers(int[] t){
@@ -29,10 +29,15 @@ public class Exercice_3 {
         return x;
     }
 
-    static boolean aChiffresTousDifferents(int[] x){
+    static boolean aChiffresTousDifferents(int n){
+            int[] x = frequenceChiffres(n);
             for (int i = 0; i < x.length; i++) {
                 if (x[i]>1){ return false;}
             }
             return true;
+    }
+
+    static boolean aChiffresTousDifferentsBis(int[] x){
+        return true;
     }
 }
