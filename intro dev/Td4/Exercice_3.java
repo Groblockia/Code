@@ -25,7 +25,9 @@ public class Exercice_3 {
             n = n/10;
             x[r] +=1;
         }
-
+        if (n==0) {
+            x[0] += 1;
+        }
         return x;
     }
 
