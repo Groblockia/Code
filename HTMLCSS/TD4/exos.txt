@@ -31,3 +31,4 @@ Exercice 2)
     2. P s’affichera en blue car les deux lignes ont la même valeur (1,0,0,1) mais color = blue est appelé en dernier 
 
  
+ 

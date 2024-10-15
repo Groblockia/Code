@@ -78,3 +78,44 @@ tbody>tr:nth-child(even){background-color: #ccc;}
   bottom: 10px;
   right: 30px;
 }
+
+nav>div{
+  background-color: #5BBDBF;
+  position: relative;
+  display: inline;
+  width: 100px;
+}
+
+nav a{
+  background-color: #c0d5c2;
+  padding-left: 10px;
+  padding-right: 10px;
+  border-left-width: 2px;
+  border-left-style: solid;
+  border-left-color: black;
+}
+
+nav>div:first-child>a{
+  border: none;
+}
+
+nav{
+  display:flex;
+  flex-direction:row;
+  width: 75%;
+  height: 50px;
+}
+
+
+.submenu{
+  display: none;
+  position: absolute;
+  top: 50px;
+  left: 0px;
+  background-color: #aca;
+
+}
+
+nav>div:hover .submenu{
+  display: block;
+}
