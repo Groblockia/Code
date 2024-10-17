@@ -2,8 +2,9 @@ package Td5;
 
 public class Exercice_1 {
     public static void main(String[] args){
-        int[][] mat = { {1,-1,1} , {-2,2,2} };
-        afficherMatrice(mat);
+        int[][] mat1 = { {1,10,100} , {1,10,100} };
+        int[][] mat2 = { {1,10,100} , {1,10,100} };
+        afficherMatrice(addition(mat1, mat2));
     }
 
     static void afficherMatrice(int[][] mat){
@@ -16,8 +17,14 @@ public class Exercice_1 {
             System.out.println(" ");
         }
     }
-    static void addition(){
-        return;
-    }
 
+    static int[][] addition(int[][] mat1, int[][] mat2){
+        int[][] somme = new int[mat1.length][mat1[0].length];
+        for (int i = 0; i < somme.length; i++) {
+            for (int j = 0; j < somme[0].length; j++) {
+                somme[i][j] += mat1[i][j] + mat2[i][j]; 
+            }
+        }
+        return somme;
+    }
 }
