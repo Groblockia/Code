@@ -2,9 +2,9 @@ package Td5;
 
 public class Exercice_1 {
     public static void main(String[] args){
-        int[][] mat1 = { {1,10,100} , {1,10,100} };
-        int[][] mat2 = { {1,10,100} , {1,10,100} };
-        afficherMatrice(addition(mat1, mat2));
+        int[][] mat1 = { {1,10,100} , {1,10,100}, {1,10,100} };
+        int[][] mat2 = { {1,10,100} , {1,10,100}, {1,10,100}  };
+        sommeDiagos(mat1);
     }
 
     static void afficherMatrice(int[][] mat){
@@ -26,5 +26,26 @@ public class Exercice_1 {
             }
         }
         return somme;
+    }
+
+    static int sommeDiagos(int[][] mat){
+        int diagoBas = 0;
+        int diagoHaut = 0;
+        for (int i = 0; i < mat.length; i++) {
+                diagoBas += mat[i][i];
+//
+        }
+
+        //a finir
+        for (int i = mat.length; i >= 0; i--) {
+            diagoHaut += mat[i][i];
+            System.out.println(mat[i][i]);
+            System.out.println("diagoBas = "+ diagoHaut);
+        }
+
+        int[] somme = {diagoBas,diagoHaut};
+        System.out.println("la somme de la diagonale de haut gauche a bas droite =" + somme[0]);
+        System.out.println("la somme de la diagonale de bas droite a haut gauche =" + somme[1]);
+        return somme[0]+somme[1];
     }
 }
