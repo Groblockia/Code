@@ -5,8 +5,8 @@ public class Date {
     private int jour;
     private int mois;
     private int annee;
-    private String[] nom_mois = {"apagnan","janvier", "février", "mars", "avril", "mai", "juin", "juillet", "aout", "septembre", "octobre", "novembre", "décembre"};
-
+    private static String[] nom_mois = {"apagnan","janvier", "février", "mars", "avril", "mai", "juin", "juillet", "aout", "septembre", "octobre", "novembre", "décembre"};
+    private static String[] jour_semaine = {"Samedi", "Dimanche", "Lundi", "Mardi", "Mercredi", "Jeudi", "Vendredi"};
     public Date ( int d ,int m,int y) {
         this.jour = d;
         this.mois = m;
@@ -43,6 +43,10 @@ public class Date {
         }
     }
 
+    public void print_date(){
+        System.out.println(this.jour + " " +nom_mois[this.mois] + " " + this.annee);
+    }
+
     public boolean is_equal(Date d1, Date d2){
         if (d1.jour != d2.jour){
             return false;
@@ -56,7 +60,24 @@ public class Date {
         return true;
     }
 
-    public boolean precede(Date d1, Date d2){
+    public boolean is_before(Date d1, Date d2){
+        if (d1.annee < d2.annee){
+            return true;
+        }
+        else if ( d1.annee == d2.annee){
+            if (d1.mois < d2.mois){
+                return true;
+            }
+            else if (d1.mois == d2.mois){
+                if (d1.jour < d2.jour){
+                    return true;
+                }
+            }
+        }
+        return false;
+    }
+
+    public boolean is_after(Date d1, Date d2){
         if (d1.annee > d2.annee){
             return true;
         }
@@ -73,14 +94,76 @@ public class Date {
         return false;
     }
 
-    public void print_date(){
-        System.out.println(this.jour + " " +nom_mois[this.mois] + " " + this.annee);
+    public int day_count(Date d1, Date d2){
+        if (this.is_equal(d1, d2)){
+            return 0;
+        }
+
+        if (this.is_before(d1, d2)){
+            int count = 0;
+            while (!this.is_equal(d1, d2)){
+                d1.day_increment();
+                count ++;
+            }
+            return count;
+        }
+
+        else{
+            int count = 0;
+            while (!this.is_equal(d1, d2)){
+                d2.day_increment();
+                count ++;
+            }
+            return count;
+        }
     }
 
-    public static void main(String args []){
-        Date d = new Date(1,1,2025);
-        Date d2 = new Date(31,12,2024);
-        System.out.println(d.precede(d, d2));
+    public int week(){
+        int jour = this.jour;
+        int mois = this.mois;
+        int annee = this.annee;
+
+      // Ajuster le mois et l'année pour janvier et février
+      if (this.mois == 1) {
+         mois = 13;
+         annee -= 1;
+    } else if (this.mois == 2) {
+         mois = 14;
+         annee -= 1;
+    }
+
+    int q = jour;
+    int m = mois;
+    int K = annee % 100; // Les deux derniers chiffres de l'année
+    int J = annee / 100; // Les deux premiers chiffres de l'année
+
+    // formule de Zeller
+    int f = q + (13 * (m + 1)) / 5 + K + (K / 4) + (J / 4) - 2 * J;
+    int j_sem = ((f % 7) + 7) % 7; // Modulo 7 pour obtenir le jour de la semaine
+
+    return j_sem;
+    }
+
+    public static void main(String args[]){
+
+        System.out.println(" ");
+
+        Date d = new Date(26,03,2005);
+        System.out.print("d1 =");
+        d.print_date();
+        Date d2 = new Date(14,11,2024);
+        System.out.print("d2 =");
+        d2.print_date();
+
+        System.out.println(" ");
+
+        System.out.println("d1 avant d2?" + d.is_before(d, d2));
+        System.out.println("d1 après d2?" + d.is_after(d, d2));
+
+        System.out.println(" ");
+        
+        System.out.println(d.jour_semaine[d.week()]);
+
     }
 
 }
