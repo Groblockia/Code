@@ -43,8 +43,8 @@ public class Date {
         }
     }
 
-    public void print_date(){
-        System.out.println(this.jour + " " +nom_mois[this.mois] + " " + this.annee);
+    public String print_date(){
+        return (this.jour + " " +nom_mois[this.mois] + " " + this.annee);
     }
 
     public boolean is_equal(Date d1, Date d2){
@@ -123,7 +123,6 @@ public class Date {
         int mois = this.mois;
         int annee = this.annee;
 
-      // Ajuster le mois et l'année pour janvier et février
       if (this.mois == 1) {
          mois = 13;
          annee -= 1;
@@ -149,20 +148,20 @@ public class Date {
         System.out.println(" ");
 
         Date d = new Date(26,03,2005);
-        System.out.print("d1 =");
-        d.print_date();
+        System.out.println("date d1 = " + d.print_date());
+        
         Date d2 = new Date(14,11,2024);
-        System.out.print("d2 =");
-        d2.print_date();
+        System.out.println("date d2 = " + d2.print_date());
 
         System.out.println(" ");
 
-        System.out.println("d1 avant d2?" + d.is_before(d, d2));
-        System.out.println("d1 après d2?" + d.is_after(d, d2));
+        System.out.println("d1 est égal a d2? " + d.is_equal(d, d2));
+        System.out.println("d1 est avant d2? " + d.is_before(d, d2));
+        System.out.println("d1 est après d2? " + d.is_after(d, d2));
 
         System.out.println(" ");
         
-        System.out.println(d.jour_semaine[d.week()]);
+        System.out.println("le " + d.print_date() +" est un " + Date.jour_semaine[d.week()]);
 
     }
 
