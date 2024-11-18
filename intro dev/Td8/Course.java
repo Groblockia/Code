@@ -34,8 +34,8 @@ public class Course {
 
 
     public static void main(String args[]){
-        Voiture v1 = new Voiture("quoi", 1);
-        Voiture v2 = new Voiture("coubeh", 4);
+        Voiture v1 = new Voiture("2mahdi", 4);
+        Voiture v2 = new Voiture("1mateo", 4);
         Course c = new Course(v1,v2,50);
         System.out.println("le gagnant est: " +c.deroulement().leNom());
     }
