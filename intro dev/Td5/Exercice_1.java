@@ -3,7 +3,7 @@ package Td5;
 public class Exercice_1 {
     public static void main(String[] args){
         int[][] mat1 = { {1,10,100} , {1,10,100}, {1,10,100} };
-        int[][] mat2 = { {1,10,100} , {1,10,100}, {1,10,100}  };
+        //int[][] mat2 = { {1,10,100} , {1,10,100}, {1,10,100}  };
         sommeDiagos(mat1);
     }
 
